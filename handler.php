@@ -1,15 +1,15 @@
-<?php 
-$incoming = array();
-$incoming[] = $_POST['name'];
-$incoming[] = $_POST['age'];
-$incoming[] = $_POST['email'];
-if(isset($_POST['name'])){
-	$user = (object) $incoming;
-}
+<?php
+/**
+ *  This is the backend implementation of the cross domain
+ *  ajax call.
+ * 	@param $_REQUEST['site']  - the site you want to visit
+ *  @param $_REQUEST['param'] - the method you want to hit it with. ( GET, POST, PUT, ect..)
+ **/
+define('SITE', $_REQUEST['site']);
+define('METHOD', $_REQUEST['method']);
 
-var_dump($user);
+$ch 	= curl_init(SITE);
+$resp 	= curl_exec($ch);
+curl_close($ch);
 
-//$user_inspection = new ReflectionClass($user);
-//echo $user_inspection;
-
-//phpinfo();
+return $resp;

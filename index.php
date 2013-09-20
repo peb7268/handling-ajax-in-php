@@ -8,16 +8,16 @@
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<title>Page Title</title>
 	<link rel="stylesheet" href="styles/styles.css" type="text/css" media="screen" title="no title" charset="utf-8">
-	
+
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 	<script type="text/javascript" src="js/global.js" charset="utf-8"></script>
 </head>
 <body>
-	<form name="form" id="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-		<input type="text" name="name" placeholder="name">
-		<input type="text" name="age" placeholder="age">
-		<input type="text" name="email" placeholder="email">
-		<input type="submit" name="submit" value="Submit">
+	<form name="form" id="form" action="handler.php" method="post">
+		<p><input type="text" name="site" placeholder="site"></p>
+		<p><input type="text" name="method" placeholder="METHOD: GET, POST, PUT, DELETE"></p>
+		<p><a href="#boom">Make Ajax</a></p>
 	</form>
+	<div id="results"></div>
 </body>
 </html>
